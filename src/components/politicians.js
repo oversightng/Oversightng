@@ -40,7 +40,7 @@ class Politicians extends React.Component {
     });
 
     return (
-      <div className='col-md-12'>
+      <div className="col-md-12 politicians-container">
         {this.props.politicians.length &&
           <Slider {...settings}>
               {politicians}
