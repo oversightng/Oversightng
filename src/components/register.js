@@ -121,31 +121,37 @@ class Register extends React.Component{
               hintText="Full Name"
               value={this.state.fullname}
               onChange={this.handleFullname.bind(this)}
+              className="text-field"
             /><br />
             <TextField
               hintText="Email Address"
               value={this.state.email}
               onChange={this.handleEmail.bind(this)}
+              className="text-field"
             /><br />
             <TextField
               hintText="Password"
               value={this.state.password}
               onChange={this.handlePassword.bind(this)}
+              className="text-field"
             /><br />
             <TextField
               hintText="Phone Number"
               value={this.state.number}
               onChange={this.handleNumber.bind(this)}
+              className="text-field"
             /><br />
             <TextField
               hintText="Date of Birth"
               value={this.state.dob}
               onChange={this.handleDob.bind(this)}
+              className="text-field"
             /><br />
             <TextField
               hintText="State"
               value={this.state.state}
               onChange={this.handleState.bind(this)}
+              className="text-field"
             /><br />
           </div>
         </Dialog>

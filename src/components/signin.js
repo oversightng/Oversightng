@@ -68,11 +68,13 @@ class SignIn extends React.Component {
               hintText="Email Address"
               value={this.state.email}
               onChange={this.handleEmail.bind(this)}
+              className="text-field"
             /><br />
             <TextField
               hintText="Password"
               value={this.state.password}
               onChange={this.handlePassword.bind(this)}
+              className="text-field"
             /><br />
           </div>
         </Dialog>

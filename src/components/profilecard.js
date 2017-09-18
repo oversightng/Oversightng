@@ -127,7 +127,7 @@ class ProfileCard extends React.Component {
           autoScrollBodyContent={true}
         >
           <div className="image-cont">
-            <img src={this.props.avatar} alt="avatar"/>
+            <div className="politician-circle-img" style={bgimg}></div>
           </div>
           <div className="info-cont">
             <ul>
@@ -139,12 +139,12 @@ class ProfileCard extends React.Component {
               {rate}
             </ul>
           </div>
-          <ul className='navigation-cont'>
+          {/* <ul className='navigation-cont'>
             <li className={this.isActive('projects')} onClick={this.handleClick.bind(this, 'projects')}>Projects</li>
             <li className={this.isActive('cases')} onClick={this.handleClick.bind(this, 'cases')}>Cases</li>
             <li className={this.isActive('budget')} onClick={this.handleClick.bind(this, 'budget')}>Budget</li>
           </ul>
-          {tabDisplay}
+          {tabDisplay} */}
         </Dialog>
       </div>
     );
