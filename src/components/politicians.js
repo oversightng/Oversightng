@@ -29,7 +29,7 @@ class Politicians extends React.Component {
           <ProfileCard
             name={politician.name}
             avatar={politician.avatar}
-            post={politician.portfolio}
+            post={politician.current_post}
             state={politician.state}
             dob={politician.dob}
             party={politician.party}

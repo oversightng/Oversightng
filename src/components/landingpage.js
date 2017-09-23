@@ -1,5 +1,6 @@
 import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
+import Loader from 'react-loader';
 
 import TopNav from './topnav';
 import Profile from './profile';
@@ -15,6 +16,7 @@ class LandingPage extends React.Component {
       data: [],
       input: '',
       loggedin: false,
+      loaded: false,
     }
   };
 
@@ -25,6 +27,7 @@ class LandingPage extends React.Component {
             this.setState({
               data: json,
               showDialog: false,
+              loaded: true
             });
           })
           .catch((error) => {
@@ -68,7 +71,12 @@ class LandingPage extends React.Component {
           onUserInput={this.handleUserInput.bind(this)}
           onClick={this.someEvent}
         />
-        <Politicians politicians={filtered} loggedin={this.state.loggedin} />
+        <Loader loaded={this.state.loaded} className="loader" lines={15} length={5} width={3} radius={30}
+          corners={1} rotate={0} direction={1} color="green" speed={3}
+          trail={60} shadow={false} hwaccel={false} className="spinner"
+          zIndex={2e9}>
+          <Politicians politicians={filtered} loggedin={this.state.loggedin} />
+        </Loader>
       </div>
     );
   }

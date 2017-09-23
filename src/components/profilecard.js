@@ -1,5 +1,6 @@
 import React from 'react';
 import Dialog from 'material-ui/Dialog';
+import StarRating from 'react-star-rating';
 
 class ProfileCard extends React.Component {
   constructor(props) {
@@ -48,6 +49,10 @@ class ProfileCard extends React.Component {
 
   isActive(selected) {
     return ((selected === this.state.selected) ? 'active' : 'default');
+  }
+
+  handleRatingClick(e, data) {
+      alert('You left a ' + data.rating + ' star rating for ' + data.caption);
   }
 
   render() {
@@ -104,7 +109,6 @@ class ProfileCard extends React.Component {
       myrating = <p className="my-rating"><i>Your rating:</i> <span>0%</span> </p>;
     }
 // ..........
-
 
     return (
       <div>
