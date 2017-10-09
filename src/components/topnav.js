@@ -10,8 +10,8 @@ class TopNav extends React.Component{
       <div className="col-md-12">
         <span><img alt="logo thumbnail" src="https://i.imgur.com/smX5Xaw.png" className="logo-thumb" /></span>
         <div style={styles.topnavIcons}>
-          <Register onUserSubmit={this.props.onUserSubmit.bind(this)} />
-          <SignIn onUserSubmit={this.props.onUserSubmit.bind(this)} />
+          <Register login={this.props.login.bind(this)} />
+          <SignIn login={this.props.login.bind(this)} />
         </div>
       </div>
     );

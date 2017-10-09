@@ -7,7 +7,7 @@ import Profile from './profile';
 import SearchBar from './searchbar';
 import Politicians from './politicians';
 
-const REQUEST_URL = 'https://7638e3cf.ngrok.io/politicians';
+const REQUEST_URL = 'https://oversight-ws.herokuapp.com/api/politicians';
 
 class LandingPage extends React.Component {
   constructor(props){
@@ -56,7 +56,7 @@ class LandingPage extends React.Component {
 // login front end rendering of TopNav
     let topnav = null;
     if (this.state.loggedin === false) {
-      topnav = <TopNav onUserSubmit={this.login.bind(this)} />;
+      topnav = <TopNav login={this.login.bind(this)} />;
     } else {
       topnav = <Profile />;
     }

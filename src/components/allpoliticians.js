@@ -2,7 +2,7 @@ import React from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import ProfileCard from './profilecard';
 
-const REQUEST_URL = 'https://7638e3cf.ngrok.io/politicians';
+const REQUEST_URL = 'https://oversight-ws.herokuapp.com/api/politicians';
 
 class AllPoliticians extends React.Component {
   constructor(props) {

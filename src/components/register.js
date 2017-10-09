@@ -5,10 +5,11 @@ import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 
-const url = 'https://7638e3cf.ngrok.io/users';
+const url = 'https://oversight-ws.herokuapp.com/api/users';
 
 class Register extends React.Component{
   constructor(props){
+    console.log(localStorage.getItem('token'));
     super(props);
     this.state = {
       open: false,
@@ -47,6 +48,12 @@ class Register extends React.Component{
   handleState(e) {
     this.setState({ state: e.target.value });
   }
+  tokenSuccess(err, response) {
+    if(err){
+        throw err;
+    }
+    $window.sessionStorage.accessToken = response.body.access_token;
+  }
 
   handleSubmit() {
     fetch(url, {
@@ -65,8 +72,18 @@ class Register extends React.Component{
     })
     .then(response => response.json())
     .then(function (data) {
-      console.log('Request succeeded with JSON response', data);
+      console.log('JSON response:', data);
       console.log(url);
+      localStorage.setItem('token', data.token)
+      // localStorage.getItem('token')
+      if(!data.success) {
+        alert("There was a problem registering you in. " + data.message)
+      }
+      else {
+        alert("token =" + localStorage.getItem('token') + " : " + data.message);
+      }
+      this.props.login.bind(this);
+
     })
     .catch(function (error) {
       console.log('Request failed', error);
