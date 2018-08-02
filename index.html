@@ -21,6 +21,38 @@
 			<link rel="stylesheet" href="css/style.css" />
 			<link rel="stylesheet" href="css/style-xlarge.css" />
 		</noscript>
+
+		<style type="text/css">
+			.black {
+				color: black !important;
+			}
+			.line-1{
+			    position: relative;
+			    width: 10px;
+			    margin: 0 auto;
+			    border-right: 2px solid rgba(255,255,255,.75);
+			    font-size: 24px;
+			    text-align: center;
+			    white-space: nowrap;
+			    overflow: hidden;
+			    transform: translateY(-50%);    
+			    color: white;
+			}
+			/* Animation */
+			.anim-typewriter{
+			  animation-delay: .5s !important;
+			  animation: typewriter 4s steps(44) 1s 1 normal both,
+			             blinkTextCursor 500ms steps(44) infinite normal;
+			}
+			@keyframes typewriter{
+			  from{width: 0;}
+			  to{width: 13em;}
+			}
+			@keyframes blinkTextCursor{
+			  from{border-right-color: rgba(255,255,255,.75);}
+			  to{border-right-color: transparent;}
+			}
+		</style>
 	</head>
 	<body class="landing">
 
@@ -40,7 +72,7 @@
 		<!-- Banner -->
 			<section id="banner">
 				<h2>Hi. Let's rate some politicians!</h2>
-				<div class="typewriter"> <h1>Know Your Leaders & Rate Your Leaders</h1></div>
+				<p class="line-1 anim-typewriter">Know & Rate Your Leaders</p>
 				<ul class="actions">
 					<li>
 						<a href="http://oversight.ng/oversight-dev/" class="button big">Go to Rating Software</a>
