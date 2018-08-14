@@ -193,7 +193,6 @@
 
 	header.major {
 		text-align: center;
-		margin-bottom: 4em;
 	}
 
 		header.major h2 {
@@ -940,7 +939,7 @@
 		}
 
 	#header {
-		background-color: #383b43;
+		background-color: darkgreen;
 		color: #ffffff;
 		cursor: default;
 		font-size: 1.1em;
