@@ -122,27 +122,7 @@
 						<p>These are currently the top rated politicians on our platform.</p>
 					</header>
 					<section class="profiles">
-						<div class="row">
-							<section class="3u 6u(medium) 12u$(xsmall) profile">
-								<img src="images/dino.jpg" alt="" />
-								<h4>Dino Melaye</h4>
-								<p>Senator</p>
-							</section>
-							<section class="3u 6u$(medium) 12u$(xsmall) profile">
-								<img src="images/yemi.jpg" alt="" />
-								<h4>Prof. Yemi Osinbajo</h4>
-								<p>Vice President</p>
-							</section>
-							<section class="3u 6u(medium) 12u$(xsmall) profile">
-								<img src="images/saraki.jpg" alt="" />
-								<h4>Bukola Saraki</h4>
-								<p>Senate Head</p>
-							</section>
-							<section class="3u$ 6u$(medium) 12u$(xsmall) profile">
-								<img src="images/buhari.jpg" alt="" />
-								<h4>Mohammadu Buhari</h4>
-								<p>President</p>
-							</section>
+						<div class="row" id="top_politicians">
 						</div>
 					</section>
 					<footer>
@@ -215,3 +195,23 @@
 			</footer>
 	</body>
 </html>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+  	const url = "http://oversight-ws.herokuapp.com/api/politicians?numOfHighestRates=4";
+  	console.log('im here ' + url + '');
+  	$.getJSON( url, function(data){
+  		$.each( data, function(i, politician){
+  		  console.log('didnt get here');
+	  	  console.log(politician);
+	  	  var politician_profile = 
+	  	  '<section class="3u 6u(medium) 12u$(xsmall) profile">' +
+			 '<img src="' + politician.avatar + '" alt="" />' +
+			 '<h4>' + politician.name + '</h4>' +
+			 '<p>' + politician.current_post.title + '</p>' +
+		   '</section>';
+		   $(politician_profile).appendTo('#top_politicians');
+  		});
+  	});
+  });
+</script>
